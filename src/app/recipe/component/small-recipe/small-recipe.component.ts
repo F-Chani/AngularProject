@@ -17,9 +17,6 @@ public recipe?:Recipe
 
    ShowDetails():void{
     var userName=sessionStorage.getItem('name')
-    console.log("==============",sessionStorage.getItem('name'))
-    console.log("shoeDetail",userName)
-    console.log("category?.routingIcon")
     if(userName!=null){
       this.rout.navigate(['/recipes',this.recipe?.recipeCode]);
     }
