@@ -27,7 +27,8 @@ export class RecipteService {
   }
 
   deleteRecipe(id:number): Observable<void> {
-    return this.http.delete<void>(`https://localhost:7268/api/User/${id}`);}
+    console.log("deleteeeeeeeeeeeeee",id)
+    return this.http.delete<void>(`https://localhost:7268/api/Recipe/${id}`)}
   
   }
 

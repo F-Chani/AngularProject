@@ -2,13 +2,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { User } from '../../../entities/User.model';
 import { HttpClient } from '@angular/common/http';
 import Swal from 'sweetalert2';
 import { Category } from '../../../entities/Category.model';
 import { CategoryService } from '../../../../category.service';
 import { RecipteService } from '../../recipte.service';
 import { Recipe } from '../../../entities/Recipe.model';
+import { UserService } from '../../../user/user.service';
 
 
 @Component({
@@ -21,11 +22,14 @@ export class AddRecipeComponent implements OnInit {
   categories: Category[] = []; // רשימת הקטגוריות
   showRotatingIcon=false;
    usercode?:number;
+   user?:User
+   userList?:User[]
   constructor(
     private formBuilder: FormBuilder, 
     private router: Router,
     private categoryService:CategoryService ,// שימוש בשירות הקטגוריות
-    private recipeService: RecipteService,){}
+    private recipeService: RecipteService,
+    private userService:UserService){}
   
  
     ngOnInit(): void {
@@ -41,7 +45,18 @@ export class AddRecipeComponent implements OnInit {
     //   }
 
    // }
-
+   this.userService.getUserFromServer().subscribe({
+    next: (res) => {
+      this.userList = res,
+      console.log(this.userList)
+    },
+    error: (err) => {
+      console.log(err)
+    },
+    complete: () => {
+      console.log('finish');
+    }
+  })
     this.initForm();
     this.loadCategories(); // טעינת רשימת הקטגוריות בזמן האתחול
 
@@ -56,7 +71,7 @@ export class AddRecipeComponent implements OnInit {
       difficultyLevel: ['', Validators.required],
       ingredients: this.formBuilder.array([]),
       preparationSteps: this.formBuilder.array([]),
-      userCode: ['0', Validators.required],
+      userCode: [],
       imageRoute: ['../../../../assets/2.jpg', Validators.required]
     });
   }
@@ -91,9 +106,13 @@ addIngredients(): void {
   addRecipe(): void {
     if (this.recipeForm.valid) {
       // הגדרת המתכון מהטופס
-      const userCode: any = sessionStorage.getItem('password');
-      const userCodeNumber = parseInt(userCode);
-
+      const usercode: any = sessionStorage.getItem('password');
+      console.log("userCode",usercode)
+      // const userCodeNumber = parseInt(userCode);
+      // console.log("userCodeNumber",userCodeNumber)
+      console.log("userList",this.userList)
+      const userr=this.userList?.find(user=>user.password==usercode)
+      console.log("userrrrr",userr)
       const newRecipe: Recipe = {
         recipeCode: this.recipeForm.value.recipeCode,
         name: this.recipeForm.value.recipeName,
@@ -103,7 +122,7 @@ addIngredients(): void {
         dateAdded: new Date(),
         ingredients: this.recipeForm.value.ingredients.filter((ingredient: string) => ingredient.trim() !== ''), // מסננים את הריקים
         preparationSteps: this.recipeForm.value.preparationSteps.filter((step: string) => step.trim() !== ''), // מסננים את הריקים
-        userCode: userCodeNumber,
+        userCode: userr?.id,
         imageUrl: '../../../../assets/1.jpg'
       };
       // ביצוע בקשת POST לשרת
