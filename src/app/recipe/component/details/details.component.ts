@@ -5,9 +5,9 @@ import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { UserService } from '../../../user/user.service';
 import { Recipe } from '../../../entities/Recipe.model';
 import { User } from '../../../entities/User.model';
-import { error, log } from 'console';
 import { Category } from '../../../entities/Category.model';
 import { CategoryService } from '../../../../category.service';
+// import { DurationPipe } from '../../../duration.pipe';
 import Swal from 'sweetalert2';
 
 @Component({

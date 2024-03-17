@@ -21,30 +21,31 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox'
 import { EditRecipeComponent } from './component/edit-recipe/edit-recipe.component';
 import { AddRecipeComponent } from './component/add-recipe/add-recipe.component';
+import { DurationPipe } from "../duration.pipe";
 
 
 
 
 @NgModule({
-  declarations: [SmallRecipeComponent ,RecipesComponent,DetailsComponent,EditRecipeComponent,AddRecipeComponent],
-  imports: [
-
-    ReactiveFormsModule,
-    FormsModule,
-    MatCardModule, 
-    MatButtonModule,
-    StarsPipe,
-    MatIconModule,
-    MatDividerModule,
-    NavBarComponent,
-    CommonModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatIconModule,
-    MatOptionModule,
-    MatCheckboxModule,
-],
-  exports:[RecipesComponent,recipeRoutingModele]
+    declarations: [SmallRecipeComponent, RecipesComponent, DetailsComponent, EditRecipeComponent, AddRecipeComponent],
+    exports: [RecipesComponent, recipeRoutingModele],
+    imports: [
+        ReactiveFormsModule,
+        FormsModule,
+        MatCardModule,
+        MatButtonModule,
+        StarsPipe,
+        MatIconModule,
+        MatDividerModule,
+        NavBarComponent,
+        CommonModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatIconModule,
+        MatOptionModule,
+        MatCheckboxModule,
+        DurationPipe
+    ]
 })
 export class RecipeModule { }

@@ -33,18 +33,12 @@ export class AddRecipeComponent implements OnInit {
   
  
     ngOnInit(): void {
-   // const isLoggedIn = sessionStorage.getItem('username') && sessionStorage.getItem('password');
-    // if (!isLoggedIn) {
-    //   {
-    //     this.showRotatingIcon = true; // הצגת האייקון המסתובב
-
-    //     setTimeout(() => {
-    //       this.router.navigate(['/user/login']);
-
-    //     }, 2000); // אם רוצים שהאנימציה תמשך שתי שניות
-    //   }
-
-   // }
+   const isLoggedIn = sessionStorage.getItem('name') && sessionStorage.getItem('password');
+   console.log("isLoggedIn",isLoggedIn)
+    if (isLoggedIn==null) 
+      {
+        this.router.navigate(['/user/login']);
+      }
    this.userService.getUserFromServer().subscribe({
     next: (res) => {
       this.userList = res,
