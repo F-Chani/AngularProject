@@ -80,24 +80,25 @@ export class EditRecipeComponent  implements OnInit {
         ingredients: this.recipeForm.value.ingredients.split(','),
         preparationSteps: this.recipeForm.value.preparationSteps.split('\n')
       };
+
       this.recipeService.updateRecipe(this.recipe)
-      .subscribe(() => {
-        Swal.fire({
-          title: 'המתכון עודכן בהצלחה!',
-          icon: 'success',
-          confirmButtonText: 'אישור'
-        }).then(() => {
-          this.rout.navigate(['/recipes'])
+        .subscribe(() => {
+          Swal.fire({
+            title: 'המתכון עודכן בהצלחה!',
+            icon: 'success',
+            confirmButtonText: 'אישור'
+          }).then(() => {
+            this.rout.navigate(['/recipes'])
+          });
+       
         });
-     
-      });
     } else {
       Swal.fire({
-        title: ' שגיאה בעידכון המתכון!',
-        icon: 'error',
+        title: 'שגיאה בעידכון המתכון',
+        icon:'error',
         confirmButtonText: 'אישור'
       }).then(() => {
-        // this.rout.navigate(['/recipes'])
+        this.rout.navigate(['/recipes'])
       });
     }
   }

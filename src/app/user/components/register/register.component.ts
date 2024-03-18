@@ -46,7 +46,6 @@ ngOnInit():void{
 register(){
   let newUser=this.registerForm.value;
    this.currentUser=this.userList?.find(user => user.name === this.registerForm.value.username && user.password === this.registerForm.value.password)
-   console.log("this.currentUser",this.currentUser)
    if(this.currentUser)
    Swal.fire({                       
     icon: 'success',
@@ -56,8 +55,6 @@ register(){
   else{
     // const newUser = { ...this.registerForm.value, id: this.count };
      this.currentUser==newUser;
-     console.log("currentUser",this.currentUser)
-     console.log("newUser",newUser)
     this.userService.addUser(newUser).subscribe({
       next: (res) => {
         this.userList=res;
