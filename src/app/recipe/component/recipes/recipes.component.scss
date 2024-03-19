@@ -1,4 +1,26 @@
 
+// .toggled{
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   justify-content: space-between;
+//   // margin-top: 110px; /* קטן את המרחק בין הכרטיסיות לראש הדף */
+// }
+
+.toggled::before {
+  content: "";
+  position: fixed; /* קבע את התמונה במקום */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../../../assets/רקע.webp');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5; /* שקיפות של 50% */
+  z-index: -1; /* שימוש במעלה שונה מהעמוד עצמו */
+}
+
 .search-input {
   margin-bottom: 20px;
   padding: 10px;
@@ -22,6 +44,11 @@
 .categories-section h4 {
   color: #fff;
   margin-bottom: 10px;
+}
+.rounded-image {
+  border-radius: 50%;
+  width: 1.5cm; /* 2 ס"מ */
+  height: 1.5cm; /* 2 ס"מ */
 }
 
 
