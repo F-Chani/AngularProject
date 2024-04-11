@@ -1,0 +1,23 @@
+/* styles.css */
+
+.home-container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // background-image: url('../../assets/wel.jpg'); /* URL לתמונת הרקע */
+  background-size: contain;
+  background-position: center;
+  background-attachment: fixed; /* מאפשר לתמונה להישאר במקום על גבי המסך בעת גלילת העמוד */
+  height: 100vh;
+}
+
+#idd {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/lo.jpg');
+  background-size: cover;
+  background-position: center;
+}

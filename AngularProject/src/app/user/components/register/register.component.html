@@ -1,0 +1,46 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div id="idd">
+    <div class="container login-container">
+      <div class="row">
+        <div class="col-md-6 ads">
+          <h1><span id="fl">Company</span><span id="sl">Name</span></h1>
+        </div>
+        <div class="col-md-6 login-form">
+          <div class="profile-img">
+            <img src="../../../../assets/avatar.png" alt="profile_img" height="140px" width="140px;">
+          </div>
+          <h3>Register</h3>
+          <form [formGroup]="this.registerForm">
+            <div class="icon-input">
+                <input type="text" class="form-control" name="username" placeholder="Username"formControlName="name">
+                <div class="icon-username"></div>
+              </div>
+              <div class="icon-input">
+                <input type="text" class="form-control" name="address" placeholder="address" formControlName="address">
+                <div class="icon-address"></div>
+              </div>
+              <div class="icon-input">
+                <input type="text" class="form-control" name="email" placeholder="email" formControlName="email">
+                <div class="icon"></div>
+              </div>
+              <div class="icon-input">
+                <input type="password" class="form-control" name="password" placeholder="Password" formControlName="password">
+                <div class="icon-password"></div>
+              </div>
+            <div class="form-group">
+              <button  type="button" (click)="register()" class="btn btn-primary btn-lg btn-block">Sign In</button>
+            </div>
+            <div class="form-group forget-password">
+                <a href="#">Forget Password</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
