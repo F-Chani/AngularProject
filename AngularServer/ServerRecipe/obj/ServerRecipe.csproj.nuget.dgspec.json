@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\חני תכנות\\Angular\\ProjectFinall\\AngularServer\\ServerRecipe\\ServerRecipe.csproj": {}
+    "C:\\Users\\User\\Desktop\\חני תכנות\\Angular\\Finallllllllllllllllllllllll\\AngularProject\\AngularServer\\ServerRecipe\\ServerRecipe.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\חני תכנות\\Angular\\ProjectFinall\\AngularServer\\ServerRecipe\\ServerRecipe.csproj": {
+    "C:\\Users\\User\\Desktop\\חני תכנות\\Angular\\Finallllllllllllllllllllllll\\AngularProject\\AngularServer\\ServerRecipe\\ServerRecipe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\חני תכנות\\Angular\\ProjectFinall\\AngularServer\\ServerRecipe\\ServerRecipe.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\חני תכנות\\Angular\\Finallllllllllllllllllllllll\\AngularProject\\AngularServer\\ServerRecipe\\ServerRecipe.csproj",
         "projectName": "ServerRecipe",
-        "projectPath": "C:\\Users\\User\\Desktop\\חני תכנות\\Angular\\ProjectFinall\\AngularServer\\ServerRecipe\\ServerRecipe.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\חני תכנות\\Angular\\Finallllllllllllllllllllllll\\AngularProject\\AngularServer\\ServerRecipe\\ServerRecipe.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\חני תכנות\\Angular\\ProjectFinall\\AngularServer\\ServerRecipe\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\חני תכנות\\Angular\\Finallllllllllllllllllllllll\\AngularProject\\AngularServer\\ServerRecipe\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
