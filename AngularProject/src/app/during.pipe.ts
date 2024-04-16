@@ -15,12 +15,13 @@ export class DurationPipe implements PipeTransform {
     const preparationTimeInMinutes = minutes % 60;
     
     if (hours === 0) {
-      return `${preparationTimeInMinutes} דקות`;
+      return `${preparationTimeInMinutes} minutes`;
     } else if (preparationTimeInMinutes === 0) {
-      return `${hours} שעות`;
+      return `${hours} hours`;
     } else {
-      return `${hours} שעות ${preparationTimeInMinutes} דקות`;
+      return `${hours} hours ${preparationTimeInMinutes} minutes`;
     }
+    
   }
 
 }

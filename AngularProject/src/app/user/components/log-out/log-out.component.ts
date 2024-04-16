@@ -19,7 +19,8 @@ export class LogOutComponent implements OnInit {
     // מחיקת הנתונים מהsession storage
     sessionStorage.removeItem('name');
     sessionStorage.removeItem('password');
-    alert('התנתקת בהצלחה!');
+    alert('Logged out successfully!');
+
     // הנתונים מחוקים, ניתן להפנות את המשתמש לעמוד התחברות
 
     setTimeout(() => {

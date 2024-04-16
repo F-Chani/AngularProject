@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Recipe } from '../entities/Recipe.model';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +30,14 @@ export class RecipteService {
   deleteRecipe(id:number): Observable<void> {
     console.log("delllllllllllllll")
     return this.http.delete<void>(`https://localhost:7268/api/Recipe/${id}`);}
+    
+    getRecipeCount(): Observable<number> {
+      return this.http.get<Recipe[]>('https://localhost:7268/api/Recipe').pipe(
+        map(recipes => recipes.length)
+      );
+    }
   }
+  
 
 
 
